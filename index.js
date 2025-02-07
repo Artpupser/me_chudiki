@@ -33,20 +33,20 @@ class CubeController {
    onMouseMove(event) {
       if (!this.isMouseDown) return;
       const deltaX = event.clientX - this.startX;
-      const deltaY = event.clientY - this.startY; // Разница по Y
+      const deltaY = event.clientY - this.startY;
 
-      this.currentX += deltaX * this.rotateSpeed; // Увеличьте или уменьшите скорость вращения по Y
-      this.currentY += deltaY * this.rotateSpeed; // Увеличьте или уменьшите скорость вращения по X
+      this.currentX += deltaX * this.rotateSpeed;
+      this.currentY += deltaY * this.rotateSpeed;
 
       this.updateTransform();
       this.startX = event.clientX;
-      this.startY = event.clientY; // Обновляем начальную позицию по Y
+      this.startY = event.clientY;
    }
 
    onTouchStart(event) {
       this.isMouseDown = true;
       this.startX = event.touches[0].clientX;
-      this.startY = event.touches[0].clientY; // Сохраняем начальную позицию по Y
+      this.startY = event.touches[0].clientY;
    }
 
    onTouchEnd() {
@@ -62,7 +62,7 @@ class CubeController {
 
    snapToNearestSide() {
       this.currentX = Math.round(this.currentX / 90) * 90;
-      this.currentY = Math.round(this.currentY / 90) * 90; // Округляем угол по Y
+      this.currentY = Math.round(this.currentY / 90) * 90;
       this.updateTransform();
    }
 

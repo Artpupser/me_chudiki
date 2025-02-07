@@ -18,7 +18,6 @@
    --anim-bottom: ease infinite 5s;
    --anim-left: ease infinite 5s;
    --anim-right: ease infinite 5s;
-
    --anim-offset: min(5dvh, 5dvw)
 }
 
