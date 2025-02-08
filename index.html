@@ -3,27 +3,44 @@
 
 <head>
    <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="./src/index.css">
    <title>🥀 Чудики 🤍</title>
-   <link rel="stylesheet" href="./index.css">
 </head>
 
 <body>
    <div class="container">
       <div class="cube" id="cube">
          <div class="face front">
-            <p class="small-text">Покрути меня</p>
-            <p class="mid-text">Покрути меня</p>
             <p class="large-text">Покрути меня</p>
          </div>
-         <div class="face right">Сайт #me_chudiki</div>
-         <div class="face back"></div>
-         <div class="face left"></div>
-         <div class="face bottom"></div>
-         <div class="face top"></div>
+         <div class="face right flex-column flex flex-start">
+            <p class="large-text w-100">Мы в интернетах</p>
+            <div id="list-link" class="w-90"></div>
+         </div>
+         <div class="face back flex-column flex flex-start">
+            <div class="about">
+               <p class="large-text">О нас</p>
+               <p class="mid-text">Мы просто чиловые парни</p>
+               <p class="small-text">Еще мы создаем и делимся интересными проектами в мире игр/IT.</p>
+               <p class="small-text">На нашем сайте собраны ссылки на группы, где мы играем и общаемся.</p>
+               <p class="small-text">Следите за новостями и участвуйте в наших розыгрышах!</p>
+            </div>
+         </div>
+         <div class="face left flex-column flex flex-start">
+            <p class="large-text w-100">Наши кланы/гильдии/группы</p>
+            <div id="list-clans" class="w-90"></div>
+         </div>
+         <div class="face bottom">
+            <img class="face-logo" src="./img/chudiki.jpg">
+         </div>
+         <img class="face-logo">
+         <div class="face top">
+            <p class="large-text">#me_chudiki</p>
+         </div>
       </div>
    </div>
-   <script src="./index.js"></script>
+   <script src="./src/index.js"></script>
 </body>
 
 </html>
