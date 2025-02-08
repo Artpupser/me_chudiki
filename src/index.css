@@ -78,7 +78,7 @@ img {
    width: var(--cube-sizeX);
    height: var(--cube-sizeY);
    transform-style: preserve-3d;
-   transition: ease 0.2s;
+   transition: ease 0.25s;
 }
 
 .face {

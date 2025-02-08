@@ -3,12 +3,16 @@ class CubeController {
       this.cube = cubeElement;
       this.isTouchScreen = false;
       this.startX = 0;
-      this.startY = 0; // Сохраняем начальную позицию по Y
+      this.startY = 0;
       this.currentX = 0;
-      this.currentY = 0; // Угол по Y
+      this.currentY = 0;
       this.rotateSpeed = 0.2;
-      this.swapForce = 2;
+      this.mobileSensitivity = 0.5;
       this.connectHandlers();
+   }
+
+   isMobile() {
+      return /Mobi|Android/i.test(navigator.userAgent);
    }
 
    connectHandlers() {
@@ -46,8 +50,8 @@ class CubeController {
 
    onTouchStart(event) {
       this.isTouchScreen = true;
-      this.startX = event.touches[0].clientX * swapSpeed;
-      this.startY = event.touches[0].clientY * swapSpeed;
+      this.startX = event.touches[0].clientX;
+      this.startY = event.touches[0].clientY;
    }
 
    onTouchEnd() {
@@ -57,7 +61,16 @@ class CubeController {
 
    onTouchMove(event) {
       if (!this.isTouchScreen) return;
-      this.onMouseMove(event.touches[0]);
+      event.preventDefault();
+      const deltaX = event.touches[0].clientX - this.startX;
+      const deltaY = event.touches[0].clientY - this.startY;
+
+      this.currentX += deltaX * this.mobileSensitivity;
+      this.currentY += deltaY * this.mobileSensitivity;
+
+      this.updateTransform();
+      this.startX = event.touches[0].clientX;
+      this.startY = event.touches[0].clientY;
    }
 
    snapToNearestSide() {
