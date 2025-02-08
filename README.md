@@ -16,7 +16,7 @@
 
 ### Пример
 
-Будет в релизе !!! 🚀
+![preview](https://github.com/Artpupser/me_chudiki/blob/main/img/preview.png)
 
 ### Демо
 
