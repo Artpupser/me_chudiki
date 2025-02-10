@@ -150,6 +150,11 @@ const config_clans = [
       link: 'https://steamcommunity.com/groups/me_chudiki',
       image: "./img/steam.png",
       text: "Steam"
+   },
+   {
+      link: 'https://www.roblox.com/communities/35611079/me-chudiki#!/about',
+      image: "./img/roblox.svg",
+      text: "Roblox"
    }
 ];
 
